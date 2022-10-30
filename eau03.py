@@ -3,13 +3,13 @@ import sys
 fibo = [0, 1, 1, 2]
    
 if len(sys.argv) != 2 :
-   print("erreur")
+   print(-1)
    sys.exit()
 
 try : 
    index = int(sys.argv[1])
 except ValueError:
-   print("erreur")
+   print(-1)
    sys.exit()
 
 if index > 3 : 
@@ -17,9 +17,10 @@ if index > 3 :
       fibo.append(fibo[nbr-2]+fibo[nbr-1])
 
    result = fibo.pop()
+elif index < 0 : 
+   result = -1
 else : 
    result = fibo[index]
-
 
 
 print(result)
